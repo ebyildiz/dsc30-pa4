@@ -306,20 +306,49 @@ class DoublyLinkedListTest {
             abs1.get(100);
         });
 
+        abs1.clear();
+
 
     }
 
     @Test
     void removeMultipleOfTest() {
-         //TODO
-        /**
          add100(abs1);
-         Integer previous0 = abs1.get(10);
-         Integer previous10 = abs1.get(0);
-         Integer previous20 = abs1.get(20);
-         abs1.removeMultipleOf(4);
-         assertEquals(90, abs1.size());
-         */
+         abs1.removeMultipleOf(5);
+         assertEquals(80, abs1.size());
+         assertEquals(abs1.get(0), 1);
+        assertEquals(abs1.get(5), 7);
+        assertEquals(abs1.get(10), 13);
+        Assertions.assertThrows(IllegalArgumentException.class, () ->{
+            abs1.removeMultipleOf(0);
+        });
+        abs1.removeMultipleOf(89);
+        assertEquals(79, abs1.size());
+        assertEquals(abs1.get(0), 2);
+        abs1.removeMultipleOf(1);
+        assertEquals(0, abs1.size());
+
+        Assertions.assertThrows(IllegalArgumentException.class, () ->{
+            abs1.removeMultipleOf(-3);
+        });
+
+        abs1.add(23);
+        abs1.add(45);
+        abs1.add(19);
+        abs1.add(90);
+
+        abs1.removeMultipleOf(4);
+        assertEquals("[(head) -> 45 -> 19 -> 90 -> (tail)]", abs1.toString());
+        abs1.removeMultipleOf(2);
+        assertEquals("[(head) -> 19 -> (tail)]", abs1.toString());
+
+        assertEquals(1, abs1.size());
+
+        abs1.removeMultipleOf(1);
+        assertEquals(0, abs1.size());
+        assertEquals("[(head) -> (tail)]", abs1.toString());
+
+
 
     }
 

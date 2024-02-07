@@ -354,8 +354,19 @@ public class DoublyLinkedList<T> extends AbstractList<T> {
      * @throws IllegalArgumentException if base is less than 1
      */
     public void removeMultipleOf(int base) {
-        for(int i=0; i<size(); i++){
-            if(i%base==0) {remove(i);}
+        if(base<1){
+            throw new IllegalArgumentException();
+        }
+
+        else if(base!=1) {
+            for (int i = 0; i < size(); i++) {
+                if (i % (base - 1) == 0) {
+                    remove(i);
+                }
+            }
+        }
+        else{
+            clear();
         }
     }
 
