@@ -36,7 +36,7 @@ public class DoublyLinkedList<T> extends AbstractList<T> {
 
     /**
      * Checks if the given element is null
-     * 
+     *
      * @param element the element we want to check
      * @throws NullPointerException if the element is null
      */
@@ -59,6 +59,8 @@ public class DoublyLinkedList<T> extends AbstractList<T> {
 
         /**
          * Constructor to create singleton Node
+         *
+         * @param element we want to add to the Node's data
          */
         private Node(T element) {
             data = element;
@@ -88,6 +90,8 @@ public class DoublyLinkedList<T> extends AbstractList<T> {
 
         /**
          * Accessor to get the Nodes Element
+         *
+         * @return the element belongs to the Node
          */
         public T getElement() {
             return data;

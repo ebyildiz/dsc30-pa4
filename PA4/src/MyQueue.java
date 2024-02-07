@@ -46,7 +46,7 @@ public class MyQueue<T> implements MyQueueInterface<T> {
      * Method adds an element to the queue
      *
      * @param data to be added
-     * @throws NullPointerException if the data is null
+     * @throws IllegalArgumentException if the data is null
      */
     public void enqueue(T data){
         if(data==null){
