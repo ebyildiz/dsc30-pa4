@@ -18,12 +18,28 @@ public class DoublyLinkedList<T> extends AbstractList<T> {
     private Node head;
     private Node tail;
     private T toAdd;
+
+    /**
+     * Check if the given index is out of the desired bounds
+     *
+     * @param index the index we want to check
+     * @param start where the bound starts
+     * @param end where the bound ends
+     * @throws IndexOutOfBoundsException if the index is out of range [start, end]
+     */
     private void outOfBounds(int index, int start, int end)
     throws IndexOutOfBoundsException{
         if(index>end||index<start){
             throw new IndexOutOfBoundsException();
         }
     }
+
+    /**
+     * Checks if the given element is null
+     * 
+     * @param element the element we want to check
+     * @throws NullPointerException if the element is null
+     */
     private void throwNullEx(T element)
     throws NullPointerException{
         if(element==null){
